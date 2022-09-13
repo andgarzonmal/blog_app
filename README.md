@@ -27,7 +27,7 @@ code editor and browser
 - Github: [@andgarzonmal](https://github.com/Gopxfs)
 - Linkedin: [Andres](https://www.linkedin.com/in/gabriel-fonseca-sales-8bb64b236/)
 
-## :apretón-manos: Contributing
+## Contributing
 Contributions, issues, and feature requests are welcome!
 Feel free to check the [issues page](../../issues/).
 ## Show your support
