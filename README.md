@@ -35,9 +35,7 @@ Give a :estrella:️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- To Microverse curriculum projects 
 
 ## License
 This project is [MIT](./MIT.md) licensed.
