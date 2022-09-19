@@ -15,7 +15,6 @@
 
 To get a local copy up and running, follow these simple example steps:
 
-
 - Clone this repo
 - In your terminal, navigate to the repo folder and run: `rails s`
 
