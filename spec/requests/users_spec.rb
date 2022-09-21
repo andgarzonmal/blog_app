@@ -12,12 +12,12 @@ RSpec.describe 'Users', type: :request do
     end
     it 'response body includes correct placeholder text.' do
       get users_path
-      expect(response.body).to include('users index here')
+      expect(response.body).to include('Tom')
     end
   end
 
   describe 'GET /show' do
-    before(:each) { get user_path(2) }
+    before(:each) { get user_path(1) }
 
     it 'response status is correct' do
       expect(response).to have_http_status(:ok)
@@ -28,7 +28,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'response body includes correct placeholder text.' do
-      expect(response.body).to include('users show here')
+      expect(response.body).to include('Tom')
     end
   end
 end
