@@ -25,7 +25,7 @@ class PostsController < ApplicationController
           redirect_to user_post_path(@current_us, @post)
         else
           render :new
-        end 
+        end
       end
     end
   end
