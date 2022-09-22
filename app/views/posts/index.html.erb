@@ -1,1 +1,28 @@
-<h1> posts index here </h1>
+<div class="user">
+  <img src="<%= @user.photo %>" alt="User-photo" class="user-photo">
+  <div class="user-info">
+    <h1><%= @user.name%></h1>
+    <p>Number of posts: <%= @user.posts_counter %></p>
+  </div>
+<div>
+  
+<% @posts.each_with_index do |post, i| %>
+  <div class="last-posts">
+    <div class="user-info">
+      <h3>Post <%=i+1%> </h3>
+      <p> <%=post.title%> </p>
+      <div>
+        <p> Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%> </p>
+      </div>
+    </div>
+  </div>
+  <ul>
+    <% post.recent_5_comments.each do |comment|  %>
+      <li><%= @user.name %>: <%= comment.text%></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<button>
+ pagination
+</button>

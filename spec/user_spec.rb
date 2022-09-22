@@ -14,9 +14,11 @@ RSpec.describe User, type: :model do
   end
 
   it 'should return last 3 posts' do
-    4.times do |n|
-      Post.create(author: user, title: "Hello#{n}", text: "This is my #{n} post")
-    end
-    expect(user.recent_3_posts.count).to eq(3)
+    user1 = User.create(name: 'Tomas', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+    Post.create(author: user1, title: 'Hello1', text: 'This is my post')
+    Post.create(author: user1, title: 'Hello2', text: 'This is my post')
+    Post.create(author: user1, title: 'Hello3', text: 'This is my post')
+    Post.create(author: user1, title: 'Hello4', text: 'This is my post')
+    expect(user1.recent_3_posts.length).to eq(3)
   end
 end
