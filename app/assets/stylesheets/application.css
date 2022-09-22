@@ -49,3 +49,12 @@
 .posts-number {
   text-align: end;
 }
+
+.user-show-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  justify-content: center;
+  width: 100%;
+}
+
