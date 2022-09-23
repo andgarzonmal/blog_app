@@ -10,3 +10,9 @@
 
   <%= form.submit "Submit Post", class:"submit-btn", id:"post-btn" %>
 <% end %>
+
+<%= form_with model: Like, url: user_post_likes_path do |form| %>
+  <div class="actions">
+      <%= form.submit "Add Like" %>
+  </div>
+<% end %>
