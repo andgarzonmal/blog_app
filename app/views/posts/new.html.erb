@@ -1,0 +1,18 @@
+<%= form_with model: Post, url:user_posts_path , class:"create-post", method: :post do |form| %>
+  <h1>Create a new Post </h1>
+  <div>
+    <h2>
+      <%= form.label :title,"Title", class:'title-label' %>
+    </h2>
+    <%= form.text_field :title, placeholder: 'Title of the post...', class:"title-input" %>
+  </div>
+  <br>
+  <div>
+    <h2>
+      <%= form.label :text, "Text", class:'text-label' %>
+    </h2>
+    <%= form.text_area :text, placeholder: 'Write your post...', class:"text-input" %>
+  <div>
+
+  <%= form.submit "Submit Post", class:"submit-btn", id:"post-btn" %>
+<% end %>

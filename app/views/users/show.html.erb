@@ -1,29 +1,30 @@
-<div class="user">
-  <img src="<%= @user.photo %>" alt="User-photo" class="user-photo">
-  <div class="user-info">
-    <h1><%= @user.name%></h1>
-    <p>Number of posts: <%= @user.posts_counter %></p>
-  </div>
-<div>
-  
-<div class="user-bio">
-  <h2>Bio</h2>
-  <p> <%=@user.bio%> </p>
-<div>
-
-<% @last_3_posts.each_with_index do |post, i| %>
-  <div class="last-posts">
+<div class="user-show-container">
+  <div class="user">
+    <img src="<%= @user.photo %>" alt="User-photo" class="user-photo">
     <div class="user-info">
-      <h3>Post <%=i+1%> </h3>
-      <p> <%=post.text%> </p>
-      <div>
-        <p> Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%> </p>
-      </div>
+      <h1><%= @user.name%></h1>
+      <p class="posts-number">Number of posts: <%= @user.posts_counter %></p>
     </div>
   </div>
-<% end %>
+  <section >
+    <div class="user-bio">
+      <h2>Bio</h2>
+      <p> <%=@user.bio%> </p>
+    <div>
 
-<button class="see">
-      <%= link_to "See all posts", user_posts_path(@user), {:class => "button_class"} %>
-</button>
-
+    <% @last_3_posts.each_with_index do |post, i| %>
+      <div class="last-posts">
+        <div class="user-info">
+          <h3>Post <%=i+1%> </h3>
+          <p> <%=post.text%> </p>
+          <div>
+            <p> Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%> </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </section>
+  <button class="see">
+        <%= link_to "See all posts", user_posts_path(@user), {:class => "button_class"} %>
+  </button>
+<div>
