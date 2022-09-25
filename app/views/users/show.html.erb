@@ -15,7 +15,9 @@
     <% @last_3_posts.each_with_index do |post, i| %>
       <div class="last-posts">
         <div class="user-info">
-          <h3>Post <%=i+1%> </h3>
+          <%= link_to user_post_path(params[:id], post.id), {:class => "3-post-link"} do %>
+            <h3>Post <%=i+1%> </h3>
+          <% end %>
           <p> <%=post.text%> </p>
           <div>
             <p> Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%> </p>
@@ -24,7 +26,7 @@
       </div>
     <% end %>
   </section>
-  <button class="see">
-        <%= link_to "See all posts", user_posts_path(@user), {:class => "button_class"} %>
-  </button>
+  <%= link_to user_posts_path(@user), {:class => "3-post-link"} do %>
+    <h3>See all posts </h3>
+  <% end %>
 <div>
