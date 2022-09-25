@@ -17,7 +17,9 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /show' do
-    before(:each) { get user_path(1) }
+    testuser = User.create(name: 'Andres', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                           bio: 'Teacher from Colombia.')
+    before(:each) { get user_path(testuser.id) }
 
     it 'response status is correct' do
       expect(response).to have_http_status(:ok)
@@ -28,7 +30,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'response body includes correct placeholder text.' do
-      expect(response.body).to include('Tom')
+      expect(response.body).to include('Andres')
     end
   end
 end
