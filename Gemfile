@@ -79,3 +79,5 @@ group :development, :test do
 end
 
 gem 'bullet', group: 'development', require: true
+
+gem 'devise'
