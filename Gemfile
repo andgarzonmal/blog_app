@@ -81,3 +81,4 @@ gem 'bullet', group: 'development', require: true
 
 gem 'devise'
 gem 'letter_opener', group: :development
+gem 'cancancan'
