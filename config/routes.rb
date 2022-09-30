@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   end
   root "users#index"
 
-  namespace :api do
-    resources :posts, only: [:index]
+  namespace :api, defaults: {format: :json} do
+    resources :posts, only: [:index] do
+      resources :comments, only: [:index, :create ] #api/posts/:post_id/comments
+    end
   end
 end
