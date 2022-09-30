@@ -12,10 +12,10 @@ class Api::CommentsController < ApplicationController
     @comment = current_user.comments.new(comment_params)
     @comment.post_id = params[:post_id]
 
-    if @comment.save 
-      render json: {message: 'successfully created' }, status: :created
+    if @comment.save
+      render json: { message: 'successfully created' }, status: :created
     else
-      render json: {errors: @comment.errors.full_messages.to_sentence}, status: :unprocessable_entity
+      render json: { errors: @comment.errors.full_messages.to_sentence }, status: :unprocessable_entity
     end
   end
 
