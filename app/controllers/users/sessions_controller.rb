@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Users::SessionsController < Devise::SessionsController
   respond_to :json, :html
   # before_action :configure_sign_in_params, only: [:create]
@@ -17,8 +15,8 @@ class Users::SessionsController < Devise::SessionsController
     sign_in(resource_name, resource)
     yield resource if block_given?
     respond_with(resource) do |format|
-      format.html {redirect_to after_sign_in_path_for(resource)}
-      format.json {render json: {message: 'succesfully logged in'}, status: :ok }
+      format.html { redirect_to after_sign_in_path_for(resource) }
+      format.json { render json: { message: 'succesfully logged in' }, status: :ok }
     end
   end
 
@@ -26,7 +24,7 @@ class Users::SessionsController < Devise::SessionsController
 
   def respond_to_on_destroy
     respond_to do |format|
-      format.json { current_user ? log_out_success : log_out_failure }
+      format.json { current_user ? log_out_failure : log_out_success }
       format.any(*navigational_formats) { redirect_to after_sign_out_path_for(resource_name) }
     end
   end
@@ -38,6 +36,4 @@ class Users::SessionsController < Devise::SessionsController
   def log_out_failure
     render json: { message: 'Logged out failure.' }, status: :unauthorized
   end
-
-
 end
