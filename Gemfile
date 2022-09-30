@@ -75,6 +75,7 @@ end
 group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'rswag-specs'
 end
 
 gem 'bullet', group: 'development', require: true
@@ -85,3 +86,6 @@ gem 'letter_opener', group: :development
 gem 'rack-cors'
 
 gem 'devise-jwt'
+
+gem 'rswag-api'
+gem 'rswag-ui'
