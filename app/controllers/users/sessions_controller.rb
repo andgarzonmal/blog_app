@@ -22,15 +22,22 @@ class Users::SessionsController < Devise::SessionsController
     end
   end
 
-  # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  private
 
-  # protected
+  def respond_to_on_destroy
+    respond_to do |format|
+      format.json { current_user ? log_out_success : log_out_failure }
+      format.any(*navigational_formats) { redirect_to after_sign_out_path_for(resource_name) }
+    end
+  end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_in_params
-  #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
-  # end
+  def log_out_success
+    render json: { message: 'Logged out.' }, status: :ok
+  end
+
+  def log_out_failure
+    render json: { message: 'Logged out failure.' }, status: :unauthorized
+  end
+
+
 end
