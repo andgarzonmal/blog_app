@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable
+         :confirmable, :jwt_authenticatable, jwt_revocation_strategy: self
 
   has_many :posts, inverse_of: 'author'
   has_many :likes, inverse_of: 'author'

@@ -83,3 +83,5 @@ gem 'devise'
 gem 'letter_opener', group: :development
 
 gem 'rack-cors'
+
+gem 'devise-jwt'
