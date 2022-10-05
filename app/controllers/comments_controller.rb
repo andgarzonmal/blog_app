@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new
   end
-
+  def update
+  end 
   def create
     @current_us = current_user
     @comment = @current_us.comments.new(params.require(:comment).permit(:text))
